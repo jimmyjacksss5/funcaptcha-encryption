@@ -28,7 +28,7 @@ for (let i = 0; i < arr.length; i++) {
             
             for (const endPos of quotePositions) {
                 if (endPos === 0) continue;
-                const content = enc.slice(1, endPos); // strip surrounding quotes
+                const content = enc.slice(1, endPos);
                 const dec = nn(content, xorKey);
                 if (dec.includes('MIIBCgKCAQEA') || dec.includes('MIIBIjANBgkq')) {
                     console.log(`\nFound key! Quote at pos ${endPos}, content length ${content.length}`);
